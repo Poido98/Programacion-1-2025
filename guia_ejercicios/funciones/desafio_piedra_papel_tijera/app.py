@@ -1,0 +1,3 @@
+from juego import jugar_piedra_papel_tijera
+
+jugar_piedra_papel_tijera()
