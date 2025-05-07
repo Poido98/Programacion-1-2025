@@ -1,29 +1,24 @@
-# lista numeros
-# [4,8,3,1,0] # DESCENDENTE
 
+# lista numeros
+# [8,4,3,12,0] # DES
 
 def ordenar_bubble_sort(mi_lista: list) -> list:
     
     largo_lista = len(mi_lista)
     for indice in range(largo_lista - 1):
-
-        for sub_indice in range(indice + 1, largo_lista):
-
+        for sub_indice in range(indice + 1,largo_lista):
             if mi_lista[indice] < mi_lista[sub_indice]:
                 auxiliar = mi_lista[indice]
                 mi_lista[indice] = mi_lista[sub_indice]
                 mi_lista[sub_indice] = auxiliar
     return mi_lista
 
-# ======================================
+# =======================
 import random
+from test_sorts import test_sort
 
-cantidad = 10000
+cantidad = 15000
 mi_lista_test = list(range(cantidad))
-print(f"Lista original: {mi_lista_test}")
-
 random.shuffle(mi_lista_test)
-print(f"Lista desordenada: {mi_lista_test}")
 
-nueva_lista = ordenar_bubble_sort(mi_lista_test)
-print(f"Lista ordenada: {nueva_lista}")
+test_sort(ordenar_bubble_sort, mi_lista_test, sort_name='Bubble Sort')
